@@ -22,10 +22,12 @@
 ## Example Input (conceptual)
 
 ```
-3
-Salaried Budi_Speed A001 52000
-Hourly Bolang B001 20 40
-Hourly Bryan B002 25 30
+5
+salaried BudiSpeed A001 520000
+salaried KomangKecap A002 500000
+hourly Rusnadyy B001 20 8
+hourly Dudung B002 10 5
+salaried Kemang A003 80000
 ```
 
 ## Output
