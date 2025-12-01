@@ -75,10 +75,10 @@ if __name__ == "__main__":
         ProductName = data[1]
         value = int(data[2])
 
-        if TypeProduct == "Drink" or TypeProduct == "drink":
+        if TypeProduct.lower() in ["drink", "d"]:
             drinkItem = Drink(ProductName, value)
             Vinding_Machine.addProduct(drinkItem)
-        elif TypeProduct == "Snack" or TypeProduct == "Snack":
+        elif TypeProduct.lower() in ["snack", "s"]:
             SnackItem = Snack(ProductName, value)
             Vinding_Machine.addProduct(SnackItem)
         else:
