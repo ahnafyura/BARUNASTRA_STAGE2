@@ -1,7 +1,7 @@
 # BARUNASTRA_STAGE2_Programming_Division
 ## Vision Subdivision
 
-# Task 1 — Payroll System
+# Task 1 (Payroll System)
 ## How It Works
 
 * The program models employees using an `Employee` class that defines a common interface on the Abstract Base Class (ABC).
@@ -45,7 +45,7 @@ Hourly Bryan B002 25 30
 
 ---
 
-# Task 2 — Vending Machine System
+# Task 2 (Vending Machine System)
 
 ## How It Works
 
