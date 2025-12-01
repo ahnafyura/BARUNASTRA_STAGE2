@@ -1,25 +1,25 @@
-# BARUNASTRA_STAGE2
+# BARUNASTRA_STAGE2_Programming_Division
+## Vision Subdivision
 
 # Task 1 — Payroll System
+## How It Works
 
-## Cara Kerja 
+* The program models employees using an `Employee` class that defines a common interface on the Abstract Base Class (ABC).
+* Its two main functions include:
 
-* Program memodelkan karyawan menggunakan sebuah class `Employee` yang mendefinisikan antarmuka umum pada Abstract Base Class (ABC).
-* Dua fungsi utamanya meliputi:
+* `Salaried` = stores the annual salary. The weekly salary is calculated by dividing the annual salary by 52.
+* `Hourly` = stores the hourly rate and the number of hours worked. The weekly salary is calculated by multiplying the hourly rate by the hours worked.
 
-  * `Salaried` = menyimpan gaji tahunan. Perhitungan gaji mingguan dilakukan dengan membagi gaji tahunan dengan 52.
-  * `Hourly` = menyimpan tarif per jam dan jumlah jam kerja. Perhitungan gaji mingguan dilakukan dengan mengalikan tarif per jam dengan jam kerja.
+* The program reads a number of employee inputs, creates the appropriate objects (Salaried or Hourly), and stores them in a list.
+* For each object, the program calls the same method `calculate_weekly_pay`, thus implementing polymorphism.
+* The output is displayed as an ASCII table that summarizes each employee's key information, along with their weekly salary.
 
-* Program membaca sejumlah input karyawan, membuat objek yang sesuai (Salaried atau Hourly) dan menyimpan ke daftar.
-* Untuk setiap objek, program memanggil metode yang sama `calculate_weekly_pay` sehingga menerapkan **polymorphism**.
-* output akan terdisplay sebagai tabel ASCII yang merangkum informasi penting setiap karyawan beserta gaji mingguan para karyawan.
-
-## Aturan Perhitungan
+## Calculation Rules
 
 * `Salaried.weekly_pay = annual_salary / 52`
 * `Hourly.weekly_pay = rate_per_hour * hours_worked`
 
-## Contoh Input (konseptual)
+## Example Input (conceptual)
 
 ```
 3
@@ -28,17 +28,17 @@ Hourly Bolang B001 20 40
 Hourly Bryan B002 25 30
 ```
 
-## Output (tabel ASCII)
+## Output
 
 <table width="100%">
   <tr>
     <td width="50%" align="center" valign="top">
       <h3> Normal Case </h3>
-      <img src="img/2.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
+      <img src="img/1.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
     </td>
     <td width="50%" align="center" valign="top">
-      <h3> CLI Table Interface </h3>
-      <img src="img/1.png" alt="CLI Table Interface" width="100%" style="border-radius: 5px;">
+      <h3> ASCII Table </h3>
+      <img src="img/2.png" alt="CLI Table Interface" width="100%" style="border-radius: 5px;">
     </td>
   </tr>
 </table>
@@ -47,29 +47,30 @@ Hourly Bryan B002 25 30
 
 # Task 2 — Vending Machine System
 
-## Cara Kerja (Ringkas)
+## How It Works
 
-* Program memodelkan produk menggunakan **Abstract Base Class** `Product` yang menyimpan atribut dasar seperti nama.
-* Dua turunan utama:
+* The program models products using the Abstract Base Class `Product`, which stores basic attributes such as name.
+* Two primary derivatives:
 
-  * `Drink` — atribut tambahan `volume` (dalam ml).
-  * `Snack` — atribut tambahan `calories` (dalam kcal).
-* Program membaca daftar produk, mengabaikan baris dengan tipe yang tidak dikenali (typo protection), lalu menyimpan objek yang valid.
-* Program menampilkan daftar produk yang terdaftar dan menghitung agregat:
+* `Drink` — additional attribute `volume` (in ml).
+* `Snack` — additional attribute `calories` (in kcal).
+* The program reads the product list, ignores rows with unknown types (typo protection), and then saves a valid object.
+* The program displays the list of listed products and calculates the aggregates:
 
-  * Total volume minuman (ml)
-  * Total kalori semua snack (kcal)
+* Total drink volume (ml)
+* Total calories of all snacks (kcal)
 
-## Contoh Input (konseptual)
-
+## Example Input (conceptual)
 ```
-3
-Drink Water 500
-Snack Chips 300
-Drink Soda 350
+5
+drink cleo 200
+drink apolo 100
+snack poky 220
+snack ayam 120
+drink aqua 202
 ```
 
-## Output (daftar produk + ringkasan)
+## Output
 
 <table width="100%">
   <tr>
@@ -78,7 +79,7 @@ Drink Soda 350
       <img src="img/4.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
     </td>
     <td width="50%" align="center" valign="top">
-      <h3> CLI Table Interface </h3>
+      <h3> ASCII Table</h3>
       <img src="img/3.png" alt="CLI Table Interface" width="100%" style="border-radius: 5px;">
     </td>
   </tr>
@@ -86,13 +87,9 @@ Drink Soda 350
 
 ---
 
-# Penjelasan Singkat Konsep OOP yang Terlihat pada Output
+# Explanation of OOP Concepts
 
-* **Encapsulation** terlihat dari atribut objek yang diakses melalui properti/metode sehingga format output tetap konsisten.
-* **Inheritance** memungkinkan `Salaried`/`Hourly` dan `Drink`/`Snack` berbagi perilaku dasar dari kelas induk.
-* **Polymorphism** memungkinkan fungsi yang sama (`calculate_weekly_pay`, `get_info`) dipanggil pada objek berbeda tanpa perlu memeriksa tipe secara eksplisit.
-* **Abstraction** menjaga antarmuka minimal yang harus diimplementasikan oleh kelas turunan.
-
----
-
-Dokumentasi ini ditujukan sebagai lampiran penjelasan program untuk laporan tugas Barunastra Stage 2.
+* **Encapsulation** is shown through object attributes accessed via properties/methods, ensuring the output format remains consistent.
+* **Inheritance** allows `Salaried`/`Hourly` and `Drink`/`Snack` to share fundamental behaviors from their parent classes.
+* **Polymorphism** enables the same functions (`calculate_weekly_pay`, `get_info`) to be called on different objects without explicitly checking their types.
+* **Abstraction** enforces a minimal interface that must be implemented by all derived classes.
