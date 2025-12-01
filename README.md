@@ -1,4 +1,4 @@
-# BARUNASTRA_STAGE2_Programming_Division
+# BARUNASTRA STAGE2 Programming Division
 ## Vision Subdivision
 
 # Task 1 (Payroll System)
