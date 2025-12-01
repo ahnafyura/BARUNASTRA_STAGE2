@@ -1,99 +1,100 @@
 import abc
 from abc import ABC, abstractmethod
 
-class employee(ABC):
-    def __init__(self, EmployeeName, EmployeeID):
-        self._EmployeeName = EmployeeName
-        self._EmployeeID = EmployeeID
+class Employee(ABC):
+    def __init__(self, name, emp_id):
+        self._name = name
+        self._id = emp_id
     
     @property
-    def EmployeeName(self):
-        return self._EmployeeName
+    def name(self):
+        return self._name
     
     @property
-    def EmployeeID(self):
-        return self._EmployeeID
+    def emp_id(self):
+        return self._id
     
     @abstractmethod
-    def calculateWeeklyPay(self):
+    def calculate_weekly_pay(self):
         pass
-    
-class sallaried(employee):
-    def __init__ (self, EmployeeName, EmployeeID, EmployeeSalary):
-        super().__init__(EmployeeName, EmployeeID)
-        self._EmployeeSalary = EmployeeSalary
-    
-    def calculateWeeklyPay(self):
-        return self._EmployeeSalary / 52
 
-class Hourly(employee):
-    def __init__ (self, EmployeeName, EmployeeID, HourWoeked, HourlyRate):
-        super().__init__(EmployeeName, EmployeeID)
-        self._HourWoeked = HourWoeked
-        self._HourlyRate = HourlyRate
+class Salaried(Employee):
+    def __init__(self, name, emp_id, annual_salary):
+        super().__init__(name, emp_id)
+        self._annual_salary = annual_salary
     
-    def calculateWeeklyPay(self):
-        return self._HourWoeked * self._HourlyRate
+    def calculate_weekly_pay(self):
+        return self._annual_salary / 52
+
+class Hourly(Employee):
+    def __init__(self, name, emp_id, hourly_rate, hours_worked):
+        super().__init__(name, emp_id)
+        self._hourly_rate = hourly_rate
+        self._hours_worked = hours_worked
+    
+    def calculate_weekly_pay(self):
+        return self._hours_worked * self._hourly_rate
     
 class PayrollSystem:
-    def __init__ (self):
-        self._employeeHere = []
+    def __init__(self):
+        self._employee_list = []
     
-    def addEmployee(self, employee):
-        self._employeeHere.append(employee)
+    def add_employee(self, employee):
+        self._employee_list.append(employee)
 
-    def calculatePayroll(self):
+    def calculate_payroll(self):
         pembatas = f"+{'-'*27}+{'-'*12}+{'-'*16}+"
-        
         print("\nPAYROLL REPORT")
         print(pembatas)
         print(f"| {'Employee Name':<25} | {'ID':<10} | {'Weekly Pay':>14} |")
         print(pembatas)
 
-        totalPayroll = 0.0
+        total_payroll = 0.0
 
-        for ListEmployee in self._employeeHere:
-            if isinstance(ListEmployee, sallaried):
-                pay = ListEmployee.calculateWeeklyPay()
-                print(f"| {ListEmployee.EmployeeName:<25} | {ListEmployee._EmployeeID:<10} | ${pay:>13.2f} |")
-                totalPayroll += pay
+        for emp in self._employee_list:
+            if isinstance(emp, Salaried):
+                pay = emp.calculate_weekly_pay()
+                print(f"| {emp.name:<25} | {emp.emp_id:<10} | ${pay:>13.2f} |")
+                total_payroll += pay
             
-        for ListEmployee in self._employeeHere:
-            if isinstance(ListEmployee, Hourly):
-                pay = ListEmployee.calculateWeeklyPay()
-                print(f"| {ListEmployee.EmployeeName:<25} | {ListEmployee._EmployeeID:<10} | ${pay:>13.2f} |")
-                totalPayroll += pay
+        for emp in self._employee_list:
+            if isinstance(emp, Hourly):
+                pay = emp.calculate_weekly_pay()
+                print(f"| {emp.name:<25} | {emp.emp_id:<10} | ${pay:>13.2f} |")
+                total_payroll += pay
 
         print(pembatas)
-        print(f"| {'TOTAL PAYROLL':<38} | ${totalPayroll:>13.2f} |")
+        print(f"| {'TOTAL PAYROLL':<38} | ${total_payroll:>13.2f} |")
         print(pembatas)
         print(" ")
 
 if __name__ == "__main__":
-    payrollSystem = PayrollSystem()
-
+    system = PayrollSystem()
     try:
-        n = int(input())
+        raw_n = input()
+        if not raw_n:
+            print("Yaampun Input kosong")
+            exit()
+        n = int(raw_n)
     except ValueError:
-        print("Inputnya harus angka gng")
+        print("Input jumlah harus angka gng")
         exit()
 
     for _ in range(n):
-        dataInput = input().split()
+        raw_input = input().split()
+        type_emp = raw_input[0]
+        name = raw_input[1]
+        emp_id = raw_input[2]
 
-        tipeData = dataInput[0]
-        namaEmployee = dataInput[1]
-        tipeID = dataInput[2]
-
-        if tipeData.lower() in ["salaried", "s"]:
-            Salary = float(dataInput[3])
-            employeeSallaried = sallaried(namaEmployee, tipeID, Salary)
-            payrollSystem.addEmployee(employeeSallaried)
+        if type_emp.lower() in ["salaried", "s"]:
+            salary = float(raw_input[3])
+            emp = Salaried(name, emp_id, salary)
+            system.add_employee(emp)
             
-        elif tipeData.lower() in ["hourly", "h"]:
-            TypeHourlyRate = float(dataInput[3])   
-            TypeHourWorked = float(dataInput[4])
-            employeeHourly = Hourly(namaEmployee, tipeID, TypeHourWorked, TypeHourlyRate)
-            payrollSystem.addEmployee(employeeHourly)
-    
-    payrollSystem.calculatePayroll()
+        elif type_emp.lower() in ["hourly", "h"]:
+            rate = float(raw_input[3])
+            hours = float(raw_input[4])
+            emp = Hourly(name, emp_id, rate, hours)
+            system.add_employee(emp)
+
+    system.calculate_payroll()
