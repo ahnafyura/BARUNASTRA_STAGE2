@@ -2,47 +2,46 @@
 
 # Task 1 — Payroll System
 
-## Cara Kerja (Ringkas)
+## Cara Kerja 
 
-* Program memodelkan karyawan menggunakan sebuah **Abstract Base Class** `Employee` yang mendefinisikan antarmuka umum.
-* Dua turunan utama:
+* Program memodelkan karyawan menggunakan sebuah class `Employee` yang mendefinisikan antarmuka umum pada Abstract Base Class (ABC).
+* Dua fungsi utamanya meliputi:
 
-  * `Salaried` — menyimpan gaji tahunan. Perhitungan gaji mingguan dilakukan dengan membagi gaji tahunan dengan 52.
-  * `Hourly` — menyimpan tarif per jam dan jumlah jam kerja. Perhitungan gaji mingguan dilakukan dengan mengalikan tarif per jam dengan jam kerja.
-* Program membaca sejumlah entri karyawan, membuat objek yang sesuai (Salaried atau Hourly) dan menyimpan ke daftar.
-* Untuk setiap objek, program memanggil metode yang sama (misalnya `calculate_weekly_pay`) sehingga menerapkan **polymorphism**.
-* Hasil akhir dirender sebagai tabel ASCII yang merangkum informasi penting setiap karyawan beserta gaji mingguan mereka.
+  * `Salaried` = menyimpan gaji tahunan. Perhitungan gaji mingguan dilakukan dengan membagi gaji tahunan dengan 52.
+  * `Hourly` = menyimpan tarif per jam dan jumlah jam kerja. Perhitungan gaji mingguan dilakukan dengan mengalikan tarif per jam dengan jam kerja.
 
-## Aturan Perhitungan (Ringkas)
+* Program membaca sejumlah input karyawan, membuat objek yang sesuai (Salaried atau Hourly) dan menyimpan ke daftar.
+* Untuk setiap objek, program memanggil metode yang sama `calculate_weekly_pay` sehingga menerapkan **polymorphism**.
+* output akan terdisplay sebagai tabel ASCII yang merangkum informasi penting setiap karyawan beserta gaji mingguan para karyawan.
+
+## Aturan Perhitungan
 
 * `Salaried.weekly_pay = annual_salary / 52`
 * `Hourly.weekly_pay = rate_per_hour * hours_worked`
-* (Program melewatkan entri dengan tipe yang tidak dikenali untuk mencegah crash dan menjaga integritas data.)
 
 ## Contoh Input (konseptual)
 
 ```
 3
-Salaried Budi A001 52000
-Hourly Felix B001 20 40
-Hourly Leon B002 25 30
+Salaried Budi_Speed A001 52000
+Hourly Bolang B001 20 40
+Hourly Bryan B002 25 30
 ```
 
-## Contoh Output (tabel ASCII)
+## Output (tabel ASCII)
 
-```
-+-------+-------+--------+--------------+
-| ID    | Name  | Type   | Weekly Pay   |
-+-------+-------+--------+--------------+
-| A001  | Budi  | Salaried | Rp 1,000    |
-| B001  | Felix | Hourly   | Rp   800    |
-| B002  | Leon  | Hourly   | Rp   750    |
-+-------+-------+--------+--------------+
-|                    Total Payroll | Rp 2,550    |
-+----------------------------------+--------------+
-```
-
-Keterangan: kolom menunjukkan ID, nama, tipe kontrak, dan gaji mingguan yang sudah diformat secara sederhana. Baris total menunjukkan jumlah gaji mingguan seluruh karyawan.
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <h3> Neo4j Graph </h3>
+      <img src="img/2.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
+    </td>
+    <td width="50%" align="center" valign="top">
+      <h3> Command-Line Pipeline Orchestrator </h3>
+      <img src="img/1.png" alt="CLI Table Interface" width="100%" style="border-radius: 5px;">
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -70,20 +69,20 @@ Snack Chips 300
 Drink Soda 350
 ```
 
-## Contoh Output (daftar produk + ringkasan)
+## Output (daftar produk + ringkasan)
 
-```
-Products
-1. Drink  - Water  - 500 ml
-2. Snack  - Chips  - 300 kcal
-3. Drink  - Soda   - 350 ml
-
-Summary
-- Total drink volume  : 850 ml
-- Total snack calories : 300 kcal
-```
-
-Keterangan: daftar menunjukkan setiap item dengan tipe, nama, dan nilai atribut spesifik. Ringkasan memberikan total agregat yang relevan.
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <h3> Neo4j Graph </h3>
+      <img src="img/4.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
+    </td>
+    <td width="50%" align="center" valign="top">
+      <h3> Command-Line Pipeline Orchestrator </h3>
+      <img src="img/3.png" alt="CLI Table Interface" width="100%" style="border-radius: 5px;">
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -96,5 +95,4 @@ Keterangan: daftar menunjukkan setiap item dengan tipe, nama, dan nilai atribut 
 
 ---
 
-Dokumentasi ini ditujukan sebagai lampiran penjelasan program untuk laporan tugas Barunastra Stage 2. Jika ingin, saya bisa menyesuaikan gaya bahasa (lebih teknis atau lebih ringkas), menambah contoh kasus tepi (misal jam lembur, entri invalid) atau menambahkan contoh keluaran dalam format CSV/JSON sebagai lampiran.
-
+Dokumentasi ini ditujukan sebagai lampiran penjelasan program untuk laporan tugas Barunastra Stage 2.
