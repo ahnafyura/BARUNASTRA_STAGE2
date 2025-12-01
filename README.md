@@ -33,11 +33,11 @@ Hourly Bryan B002 25 30
 <table width="100%">
   <tr>
     <td width="50%" align="center" valign="top">
-      <h3> Neo4j Graph </h3>
+      <h3> Normal Case </h3>
       <img src="img/2.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
     </td>
     <td width="50%" align="center" valign="top">
-      <h3> Command-Line Pipeline Orchestrator </h3>
+      <h3> CLI Table Interface </h3>
       <img src="img/1.png" alt="CLI Table Interface" width="100%" style="border-radius: 5px;">
     </td>
   </tr>
@@ -74,11 +74,11 @@ Drink Soda 350
 <table width="100%">
   <tr>
     <td width="50%" align="center" valign="top">
-      <h3> Neo4j Graph </h3>
+      <h3> Normal Case </h3>
       <img src="img/4.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
     </td>
     <td width="50%" align="center" valign="top">
-      <h3> Command-Line Pipeline Orchestrator </h3>
+      <h3> CLI Table Interface </h3>
       <img src="img/3.png" alt="CLI Table Interface" width="100%" style="border-radius: 5px;">
     </td>
   </tr>
