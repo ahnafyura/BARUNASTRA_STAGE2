@@ -47,6 +47,47 @@ salaried Kemang A003 80000
 
 ---
 
+##
+```mermaid
+classDiagram
+    direction LR
+    %% Hubungan: PayrollSystem ada di paling kiri, Employee di tengah, Anak-anak di kanan
+    PayrollSystem o-- "0..*" Employee : Aggregates (List)
+    Employee <|-- SalariedEmployee : Inherits
+    Employee <|-- HourlyEmployee : Inherits
+    
+    class PayrollSystem {
+        -List _listEmployees
+        +add_employee(Employee)
+        +run_payroll()
+    }
+
+    class Employee {
+        <<Abstract>>
+        -string _name
+        -string _id
+        +name() string
+        +emp_id() string
+        +calculate_weekly_pay()* float
+    }
+
+    class SalariedEmployee {
+        -float _annual_salary
+        +__init__(name, id, salary)
+        +calculate_weekly_pay() float
+    }
+
+    class HourlyEmployee {
+        -float _hourly_rate
+        -float _hours_worked
+        +__init__(name, id, rate, hours)
+        +calculate_weekly_pay() float
+    }
+```
+---
+This diagram illustrates the object-oriented architecture of the Payroll System, primarily utilizing inheritance and polymorphism to ensure scalability. The system is built upon an abstract base class, Employee, which establishes a unified interface containing standard attributes and an abstract method for payment calculation. This structure enforces concrete subclasses, SalariedEmployee and HourlyEmployee, to implement distinct logic for annual versus hourly pay while inheriting common traits. Finally, the PayrollSystem class functions as a manager that aggregates these employee objects, leveraging dynamic binding to process weekly payments uniformly across different employment types.
+---
+
 # Task 2 (Vending Machine System)
 
 ## How It Works
