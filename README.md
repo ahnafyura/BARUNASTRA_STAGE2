@@ -47,7 +47,7 @@ salaried Kemang A003 80000
 
 ---
 
-##
+## UML Class Diagram Task 1
 ```mermaid
 classDiagram
     direction LR
@@ -131,6 +131,7 @@ drink aqua 202
 </table>
 
 ---
+## UML Class Diagram Task 2
 ```mermaid
 classDiagram
     direction LR
