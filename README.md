@@ -7,8 +7,8 @@
 * The program models employees using an `Employee` class that defines a common interface on the Abstract Base Class (ABC).
 * Its two main functions include:
 
-* `Salaried` = stores the annual salary. The weekly salary is calculated by dividing the annual salary by 52.
-* `Hourly` = stores the hourly rate and the number of hours worked. The weekly salary is calculated by multiplying the hourly rate by the hours worked.
+* `Salaried`: stores the annual salary. The weekly salary is calculated by dividing the annual salary by 52.
+* `Hourly`: stores the hourly rate and the number of hours worked. The weekly salary is calculated by multiplying the hourly rate by the hours worked.
 
 * The program reads a number of employee inputs, creates the appropriate objects (Salaried or Hourly), and stores them in a list.
 * For each object, the program calls the same method `calculate_weekly_pay`, thus implementing polymorphism.
