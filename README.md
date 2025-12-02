@@ -35,7 +35,7 @@ salaried Kemang A003 80000
 <table width="100%">
   <tr>
     <td width="50%" align="center" valign="top">
-      <h3> Normal Case </h3>
+      <h3> Normal Output Case </h3>
       <img src="img/1.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
     </td>
     <td width="50%" align="center" valign="top">
@@ -77,7 +77,7 @@ drink aqua 202
 <table width="100%">
   <tr>
     <td width="50%" align="center" valign="top">
-      <h3> Normal Case </h3>
+      <h3> Normal Output Case </h3>
       <img src="img/4.png" alt="Normal Case" width="100%" style="border-radius: 5px;">
     </td>
     <td width="50%" align="center" valign="top">
