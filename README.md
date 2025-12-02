@@ -85,7 +85,9 @@ classDiagram
     }
 ```
 ---
+
 This diagram illustrates the object-oriented architecture of the Payroll System, primarily utilizing inheritance and polymorphism to ensure scalability. The system is built upon an abstract base class, Employee, which establishes a unified interface containing standard attributes and an abstract method for payment calculation. This structure enforces concrete subclasses, SalariedEmployee and HourlyEmployee, to implement distinct logic for annual versus hourly pay while inheriting common traits. Finally, the PayrollSystem class functions as a manager that aggregates these employee objects, leveraging dynamic binding to process weekly payments uniformly across different employment types.
+
 ---
 
 # Task 2 (Vending Machine System)
@@ -127,6 +129,45 @@ drink aqua 202
     </td>
   </tr>
 </table>
+
+---
+```mermaid
+classDiagram
+    direction LR
+    %% Hubungan: VendingMachine (Kiri) -> Product (Tengah) -> Drink/Snack (Kanan)
+    VendingMachine o-- "0..*" Product : Aggregates (List)
+    Product <|-- Drink : Inherits
+    Product <|-- Snack : Inherits
+
+    class VendingMachine {
+        -List _listProducts
+        +add_product(Product)
+        +display_products()
+    }
+
+    class Product {
+        <<Abstract>>
+        -string _name
+        +name() string
+        +get_info()* string
+    }
+
+    class Drink {
+        -int _volume_ml
+        +__init__(name, volume)
+        +get_info() string
+    }
+
+    class Snack {
+        -int _calories
+        +__init__(name, calories)
+        +get_info() string
+    }
+```
+
+---
+
+This diagram illustrates a scalable Vending Machine architecture built upon Inheritance and Polymorphism. The system defines an abstract Product base class to establish a common interface, which is extended by concrete Drink and Snack subclasses to handle specific attributes volume (ml) and calories (kcal) independently. The VendingMachine class functions as a central manager, utilizing Aggregation to store a mixed list of products and dynamically retrieving their specific details via the polymorphic get_info() method, ensuring the system remains flexible for future extensions.
 
 ---
 
