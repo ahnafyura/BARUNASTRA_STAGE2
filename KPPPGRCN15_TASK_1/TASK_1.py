@@ -44,7 +44,7 @@ class PayrollSystem:
     
     def run_payroll(self):
         total_payroll = 0.0
-        
+        print("")
         for emp in self._listEmployees:
             if isinstance(emp, SalariedEmployee):
                 pay = emp.calculate_weekly_pay()
