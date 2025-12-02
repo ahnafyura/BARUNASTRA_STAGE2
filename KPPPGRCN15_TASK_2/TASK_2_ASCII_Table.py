@@ -36,7 +36,7 @@ class VendingMachine:
     def add_product(self, product):
         self._listProducts.append(product)
     
-def display_products(self):
+    def display_products(self):
         w_name = 20 
         w_info = 15
         pembatas = f"+{'-' * (w_name + 2)}+{'-' * (w_info + 2)}+"

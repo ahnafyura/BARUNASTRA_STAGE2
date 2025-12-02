@@ -39,7 +39,7 @@ class VendingMachine:
     def display_products(self):
         total_mililiters = 0
         total_calories = 0
-
+        print("")
         for item in self._listProducts:
             print(f"{item.name}: {item.get_info()}")
             
