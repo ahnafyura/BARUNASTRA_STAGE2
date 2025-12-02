@@ -18,7 +18,9 @@ BARUNASTRA_STAGE2/
 │   ├── TASK_2.py                    # Main solution (Strict Output Requirement)
 │   └── TASK_2_ASCII_Table.py        # Enhanced version with ASCII Table UI
 │
-└── venv/                            # Python Virtual Environment (Dependencies)
+├── venv/                            # Python Virtual Environment (Dependencies)
+├── README.md                        # Project Documentation
+└── LICENSE                          # MIT License
 ```
 ---
 
