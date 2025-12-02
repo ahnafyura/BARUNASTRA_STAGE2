@@ -1,6 +1,27 @@
 # BARUNASTRA STAGE2 Programming Division
 ## Vision Subdivision
 
+---
+
+## Repository Structure
+
+```text
+BARUNASTRA_STAGE2/
+│
+├── img/                             # Documentation assets (Screenshots, Diagrams)
+│
+├── KPPPGRCN15_TASK1/                # Task 1: Payroll System
+│   ├── TASK_1.py                    # Main solution (Strict Output Requirement)
+│   └── TASK_1_ASCII_Table.py        # Enhanced version with ASCII Table UI
+│
+├── KPPPGRCN15_TASK2/                # Task 2: Vending Machine System
+│   ├── TASK_2.py                    # Main solution (Strict Output Requirement)
+│   └── TASK_2_ASCII_Table.py        # Enhanced version with ASCII Table UI
+│
+└── venv/                            # Python Virtual Environment (Dependencies)
+
+---
+
 # Task 1 (Payroll System)
 ## How It Works
 
