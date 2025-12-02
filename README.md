@@ -52,7 +52,7 @@ salaried Kemang A003 80000
 classDiagram
     direction LR
     %% Hubungan: PayrollSystem ada di paling kiri, Employee di tengah, Anak-anak di kanan
-    PayrollSystem o-- "0..*" Employee : Aggregates (List)
+    PayrollSystem o-- Employee : Aggregates (List)
     Employee <|-- SalariedEmployee : Inherits
     Employee <|-- HourlyEmployee : Inherits
     
@@ -135,7 +135,7 @@ drink aqua 202
 classDiagram
     direction LR
     %% Hubungan: VendingMachine (Kiri) -> Product (Tengah) -> Drink/Snack (Kanan)
-    VendingMachine o-- "0..*" Product : Aggregates (List)
+    VendingMachine o-- Product : Aggregates (List)
     Product <|-- Drink : Inherits
     Product <|-- Snack : Inherits
 
